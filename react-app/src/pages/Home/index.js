@@ -30,8 +30,8 @@ export default function Home() {
       <div>
         <TextField
           id="outlined-textarea"
-          label="Multiline Placeholder"
-          placeholder="Placeholder"
+          label="Text"
+          placeholder="Enter Text"
           multiline
         />
       </div>
