@@ -32,7 +32,6 @@ export default function Home() {
           id="outlined-textarea"
           label="Text"
           placeholder="Enter Text"
-          style = 
           multiline
         />
       </div>
