@@ -22,7 +22,7 @@ export default function Home() {
     <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
+        '& .MuiTextField-root': { m: 1, width: '100ch', maxwidth: '100%' },
       }}
       noValidate
       autoComplete="off"
@@ -32,6 +32,7 @@ export default function Home() {
           id="outlined-textarea"
           label="Text"
           placeholder="Enter Text"
+          style = 
           multiline
         />
       </div>
