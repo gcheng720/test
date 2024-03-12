@@ -25,10 +25,28 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Simple Text Editor</title>
+    <script type = "text/javascript" src="index.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+    </div>
+    <div style = "position:relative; left:225px;"> 
+
+      <div>
+        <form action="" id="text_form">
+        <div>
+          Write your post:
+        </div>
+        <div>
+          <textarea name="postContent" id="mytext" rows="8" cols="80" placeholder="Enter text" ></textarea>
+        </div>
+        <hr />
+        <button type="submit" id="btn" onclick="tester()">Submit</button>
+        </form>
+      </div>
+
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
