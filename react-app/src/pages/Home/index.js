@@ -27,13 +27,19 @@ export default function Home() {
       noValidate
       autoComplete="off"
     >
-      <div>
+      {/* <div>
         <TextField
           id="outlined-textarea"
           label="Text"
           placeholder="Enter Text"
           multiline
         />
+      </div> */}
+      <div>
+        Write your post:
+      </div>
+      <div>
+        <textarea name="postContent" rows={8} cols={80} placeholder="Enter text" />
       </div>
     </Box>
   );

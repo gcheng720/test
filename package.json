@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@mui/icons-material": "^5.15.12",
+    "@mui/material": "^5.15.12",
+    "@mui/styles": "^5.15.12",
+    "draft-js": "^0.11.7",
+    "mui-rte": "^2.0.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  }
+}
