@@ -55,7 +55,7 @@ export default function ClippedDrawer() {
         >
           <Toolbar>
             <Typography variant="h6" noWrap>
-              Fancy Store
+              Simple Text Editor
             </Typography>
           </Toolbar>
         </AppBar>
