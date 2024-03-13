@@ -13,13 +13,21 @@ function tester(){
             console.log(
             `This form has a string of ${words.value}`
             );
-            console.log(`This is the whole element mytext = ${words}`);
         }
 
 
     }, {once : true});
 
-    postJSON(words);
+    let list_proofread = postProofread(words.value);
+    
+    let printResponse= async () => {
+      let a = await list_proofread;
+      if (a.length > 0){
+        console.log(`Error message = ${a[0]["message"]}`);
+        alert(`Error message, ${a[0]["message"]}`);
+      }
+    };
+    printResponse();
 }
 
 async function postJSON(data) {
@@ -38,3 +46,43 @@ async function postJSON(data) {
       console.error("Error:", error);
     }
   }
+
+async function postProofread(text){
+  try{
+      const body = {
+          "text": text,
+          "language": "en-US"
+      }
+
+      let bodyURLencoded = [];
+      for(let p in body){
+          var key = encodeURIComponent(p)
+          var value = encodeURIComponent(body[p])
+          bodyURLencoded.push(key + "=" + value)
+      }
+      bodyURLencoded = bodyURLencoded.join("&")
+
+      const response = await fetch("https://sfu24spcmpt474a2eca103-4ora5oxrra-uc.a.run.app/v2/check", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          },
+          body: bodyURLencoded
+      });
+      let errors = await response.json()
+      let errors_filtered = []
+      for(let err of errors["matches"]){
+          let context = err["context"]
+          errors_filtered.push({
+              "errorContext": context["text"],
+              "errorText": context["text"].substring(context["offset"], context["offset"] + context["length"]),
+              "message": err["message"],
+              "messageShort": err["shortMessage"]
+          })
+      }
+      return errors_filtered;
+  }
+  catch(e){
+      console.log(e)
+  }
+}
