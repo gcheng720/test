@@ -23,8 +23,10 @@ function tester(){
     let printResponse= async () => {
       let a = await list_proofread;
       if (a.length > 0){
-        console.log(`Error message = ${a[0]["message"]}`);
-        alert(`Error message, ${a[0]["message"]}`);
+        for(let i = 0; i<a.length; i++){
+          console.log(`Text section = ${a[i]["errorText"]}, Error message = ${a[i]["message"]}`);
+          alert(`Error message = ${a[i]["errorText"]}\nError message = ${a[i]["message"]}`);
+        }
       }
     };
     printResponse();
