@@ -25,7 +25,7 @@ function tester(){
       if (a.length > 0){
         for(let i = 0; i<a.length; i++){
           console.log(`Text section = ${a[i]["errorText"]}, Error message = ${a[i]["message"]}`);
-          alert(`Error message = ${a[i]["errorText"]}\nError message = ${a[i]["message"]}`);
+          alert(`Text section = ${a[i]["errorText"]}\nError message = ${a[i]["message"]}`);
         }
       }
     };
