@@ -45,7 +45,7 @@ export default function ClippedDrawer() {
         >
           <Toolbar>
             <Typography variant="h6" noWrap>
-              Simple Text Editor
+              474 Proofreader
             </Typography>
           </Toolbar>
         </AppBar>
